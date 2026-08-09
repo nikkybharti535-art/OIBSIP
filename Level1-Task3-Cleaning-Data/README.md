@@ -267,11 +267,3 @@ The final dataset can be used for further exploratory data analysis, visualisati
 ## Author
 
 Nikky Bharti
-
-B.Tech - Computer Science & Engineering
-
-## Internship
-
-Oasis Infobyte - Data Analytics Internship
-
-Level 1 - Task 3: Cleaning Data
