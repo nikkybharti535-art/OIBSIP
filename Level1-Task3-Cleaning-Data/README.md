@@ -1,21 +1,32 @@
-# Data Cleaning Project
+# Level 1 - Task 3: Cleaning Data
 
-## Project Overview
+## 📌 Project Overview
 
-This project demonstrates professional data cleaning techniques using a deliberately messy dataset. The objective is to transform raw data into a clean and analysis-ready dataset while documenting the decisions made during the cleaning process.
+This project is part of the **Oasis Infobyte Data Analytics Internship**.
 
-## Objectives
+The objective of this task is to clean and preprocess a messy **Titanic dataset** and transform it into a clean and analysis-ready dataset.
 
-- Inspect the quality of the dataset.
-- Identify missing values.
+The project focuses on identifying missing values, detecting duplicate records, standardising inconsistent data formats, handling outliers, correcting data types, and comparing the dataset before and after cleaning.
+
+---
+
+## 🎯 Project Objective
+
+The main objectives of this project are:
+
+- Identify and handle missing values.
 - Detect and remove duplicate records.
-- Standardize inconsistent data.
-- Detect numerical outliers.
-- Correct inappropriate data types.
+- Standardise inconsistent categorical values.
+- Detect and analyse potential outliers.
+- Handle outliers based on data context.
+- Correct and verify data types.
 - Compare the dataset before and after cleaning.
-- Export the cleaned dataset.
+- Prepare a clean and analysis-ready dataset.
+- Save the cleaned dataset for further analysis.
 
-## Technologies Used
+---
+
+## 🛠️ Tools & Technologies Used
 
 - Python
 - Pandas
@@ -24,53 +35,131 @@ This project demonstrates professional data cleaning techniques using a delibera
 - Seaborn
 - Jupyter Notebook
 
-## Data Quality Analysis
+---
 
-The dataset was initially inspected for:
+## 📂 Dataset
 
-- Missing values
-- Duplicate rows
-- Incorrect data types
-- Range anomalies
-- Numerical outliers
+The project uses the **Titanic Dataset**.
 
-## Data Cleaning Process
+The original dataset contains information about Titanic passengers, including:
 
-### Missing Values
+- PassengerId
+- Survived
+- Pclass
+- Name
+- Sex
+- Age
+- SibSp
+- Parch
+- Ticket
+- Fare
+- Cabin
+- Embarked
 
-Missing values were analyzed column by column and handled using appropriate strategies based on the characteristics of each variable.
+### Initial Dataset Shape
 
-### Duplicate Removal
+The original dataset contained:
 
-Duplicate rows were identified and removed to prevent repeated observations from affecting the analysis.
+- **891 rows**
+- **12 columns**
 
-### Standardization
+---
 
-Inconsistent formats and categorical values were standardized to maintain consistency throughout the dataset.
+## 🔍 Initial Data Inspection
 
-### Outlier Detection
+The dataset was initially inspected using Pandas functions such as:
 
-The IQR method was used to identify potential outliers in numerical variables. The detected observations were reviewed before deciding whether they should be retained or handled.
+- `head()`
+- `shape`
+- `info()`
+- `dtypes`
+- `isnull().sum()`
+- `duplicated().sum()`
 
-### Data Type Correction
+The initial inspection helped identify missing values, data types, and duplicate records.
 
-Columns were converted to appropriate data types to ensure that the cleaned dataset could be used reliably for further analysis.
+---
 
-## Before vs After
+## 🧹 Data Cleaning Process
 
-A comparison was created to evaluate:
+### 1. Missing Value Analysis
 
-- Null values
-- Duplicate rows
-- Number of records
-- Data types
+Missing values were identified in the dataset before performing the cleaning process.
 
-before and after the cleaning process.
+The main columns requiring treatment were:
 
-## Output
+- `Age`
+- `Cabin`
+- `Embarked`
 
-The cleaned dataset was saved as a new CSV file for future analysis.
+---
 
-## Conclusion
+### 2. Handling Missing Age Values
 
-The project demonstrates a systematic approach to data cleaning and highlights the importance of data quality before performing analysis or building machine learning models.
+The `Age` column contained missing values.
+
+Instead of removing these records, the missing values were replaced using the **median age**.
+
+The median value used for imputation was:
+
+**28.0**
+
+After imputation, no missing values remained in the `Age` column.
+
+---
+
+### 3. Handling Missing Embarked Values
+
+The `Embarked` column contained missing values.
+
+The missing values were replaced using the **mode** of the column.
+
+The mode used for imputation was:
+
+**S**
+
+After this treatment, no missing values remained in the `Embarked` column.
+
+---
+
+### 4. Handling the Cabin Column
+
+The `Cabin` column had a very high proportion of missing values.
+
+The percentage of missing values was approximately:
+
+**77.10%**
+
+Because such a large proportion of the column was missing, the `Cabin` column was removed instead of attempting to impute most of its values.
+
+This helped improve the overall quality and reliability of the cleaned dataset.
+
+---
+
+## 🔄 Duplicate Data Handling
+
+Duplicate records were checked using Pandas.
+
+The analysis found:
+
+**0 duplicate rows**
+
+Therefore, no rows were removed during duplicate removal.
+
+The dataset remained at **891 rows** after this step.
+
+---
+
+## ✨ Data Standardisation
+
+Categorical values were checked for consistency and standardised.
+
+### Sex Column
+
+The `Sex` column was standardised using consistent capitalization.
+
+Before standardisation:
+
+```text
+male
+female
