@@ -1,101 +1,199 @@
-# House Price Prediction Using Linear Regression
+# Data Analyst - Level 2 - Task 1: House Price Prediction
 
-## Project Overview
+## 📌 Project Overview
 
-This project develops a machine learning model to predict house prices based on property characteristics such as area, bedrooms, bathrooms, stories, parking, location-related features, and other facilities.
+This project is part of the Oasis Infobyte Data Analytics Internship.
 
-The project follows an end-to-end machine learning workflow including exploratory data analysis, preprocessing, feature encoding, model training, evaluation, and interpretation.
+The objective of this task is to build a machine learning model that predicts house prices based on the available housing features.
 
-## Objectives
+The project covers data loading, data inspection, preprocessing, exploratory data analysis, feature selection, model training, prediction, model evaluation, and visualisation.
 
-- Explore the housing dataset.
-- Analyze the distribution of house prices.
-- Identify important predictors of house prices.
-- Handle categorical variables using One-Hot Encoding.
-- Analyze correlations between numerical variables.
-- Train a Linear Regression model.
-- Evaluate model performance using MSE, RMSE, and R².
-- Analyze residuals and model coefficients.
-- Compare Linear Regression with Ridge Regression.
+---
 
-## Dataset
+## 🎯 Objectives
 
-The project uses the `Housing.csv` dataset containing housing property information and house prices.
+The main objectives of this project are:
 
-## Technologies Used
+- Understand the structure of the housing dataset.
+- Inspect the dataset for missing values and duplicate records.
+- Perform data cleaning and preprocessing.
+- Explore the relationship between different features and house prices.
+- Select relevant features for prediction.
+- Split the data into training and testing sets.
+- Train a machine learning regression model.
+- Predict house prices for unseen data.
+- Evaluate the performance of the prediction model.
+- Visualise actual and predicted house prices.
+
+---
+
+## 🛠️ Tools & Technologies Used
 
 - Python
 - Pandas
 - NumPy
-- Scikit-learn
 - Matplotlib
 - Seaborn
+- Scikit-learn
 - Jupyter Notebook
 
-## Data Preprocessing
+---
 
-The dataset was checked for missing values and data types.
+## 📂 Dataset
 
-Categorical features were converted into numerical representations using One-Hot Encoding.
+The project uses a house price dataset containing information about residential properties and their corresponding prices.
 
-## Exploratory Data Analysis
+The dataset was inspected to understand:
 
-The project includes:
+- Number of rows and columns
+- Column names
+- Data types
+- Missing values
+- Duplicate records
+- Numerical features
+- Target variable
+- Relationships between variables
+
+---
+
+## 🔍 Data Inspection
+
+The dataset was initially inspected using Pandas functions such as:
+
+- `head()`
+- `shape`
+- `info()`
+- `describe()`
+- `isnull().sum()`
+- `duplicated().sum()`
+
+These checks helped understand the structure and quality of the dataset before building the prediction model.
+
+---
+
+## 🧹 Data Preprocessing
+
+The dataset was prepared before applying machine learning.
+
+The preprocessing workflow included:
+
+- Checking missing values.
+- Checking duplicate records.
+- Inspecting data types.
+- Selecting relevant features.
+- Preparing the input variables.
+- Preparing the target variable.
+- Converting the data into a suitable format for machine learning.
+
+---
+
+## 📊 Exploratory Data Analysis
+
+Exploratory Data Analysis was performed to understand the dataset and identify patterns related to house prices.
+
+The analysis included:
 
 - Descriptive statistics
-- Missing value analysis
-- House price distribution
+- Feature distributions
 - Correlation analysis
-- Correlation heatmap
+- Relationship between numerical features and house prices
+- Visualisation of important variables
 
-## Machine Learning
+Matplotlib and Seaborn were used to create graphs and plots for better interpretation.
 
-### Linear Regression
+---
 
-A Linear Regression model was trained using an 80/20 train-test split.
+## 🎯 Feature Selection
 
-### Model Evaluation
+The available housing features were analysed to determine their usefulness for predicting house prices.
 
-The model was evaluated using:
+The selected features were used as input variables, while the house price was used as the target variable.
 
-- Mean Squared Error (MSE)
-- Root Mean Squared Error (RMSE)
-- R² Score
+The basic prediction structure was:
 
-### Residual Analysis
+**Input Features → Machine Learning Model → Predicted House Price**
 
-A residual plot was created to examine the distribution of prediction errors.
+---
 
-### Coefficient Analysis
+## ✂️ Train-Test Split
 
-Model coefficients were analyzed to identify features with relatively strong positive or negative effects on predicted house prices.
+The dataset was divided into training and testing datasets.
 
-## Ridge Regression
+The training dataset was used to train the machine learning model, while the testing dataset was used to evaluate the model on previously unseen data.
 
-As a bonus, Ridge Regression was trained and compared with Linear Regression.
+This helps measure how well the model can generalise to new observations.
 
-### Results
+---
 
-| Model | RMSE | R² Score |
-|---|---:|---:|
-| Linear Regression | 1,324,507 | 0.6529 |
-| Ridge Regression | 1,325,320 | 0.6525 |
+## 🤖 Machine Learning Model
 
-Linear Regression performed slightly better than Ridge Regression on the test dataset.
+A regression-based machine learning approach was used for house price prediction.
 
-## Key Findings
+The model was trained using the selected housing features and the corresponding house prices.
 
-- Area showed a strong positive relationship with house price.
-- Bathrooms also showed a strong positive relationship with price.
-- Several property facilities had positive model coefficients.
-- The Linear Regression model achieved an R² score of approximately 0.653.
+After training, the model was used to generate predicted house prices for the test dataset.
 
-## Business Recommendations
+---
 
-1. Consider property size and facilities when estimating house prices.
-2. Focus on amenities that contribute positively to property value.
-3. Use data-driven regression models as a supporting tool for real-estate pricing decisions.
+## 📈 Model Prediction
 
-## Conclusion
+The trained model generated predicted prices for the test observations.
 
-This project demonstrates an end-to-end machine learning workflow for house price prediction, from exploratory data analysis and preprocessing to model evaluation and interpretation.
+The predicted values were compared with the actual house prices to understand the performance of the model.
+
+The comparison helps identify how closely the model's predictions match the actual values.
+
+---
+
+## 📊 Model Evaluation
+
+The prediction model was evaluated using appropriate regression evaluation metrics.
+
+Model evaluation helps determine the accuracy and effectiveness of the house price prediction model.
+
+The evaluation included comparison between:
+
+- Actual House Prices
+- Predicted House Prices
+
+The detailed evaluation results are available in the Jupyter Notebook.
+
+---
+
+## 📉 Visualisation
+
+Visualisations were created to understand the data and model performance.
+
+The analysis includes:
+
+- Feature distributions
+- Correlation analysis
+- Relationships between housing features and price
+- Actual vs Predicted house prices
+
+These visualisations make it easier to understand patterns in the data and evaluate prediction performance.
+
+---
+
+## 💡 Key Insights
+
+The project demonstrates:
+
+- How real-world housing data can be prepared for machine learning.
+- How exploratory data analysis helps understand important housing features.
+- How relevant features can be used to predict house prices.
+- How regression models can be applied to prediction problems.
+- How training and testing data are used to evaluate a model.
+- How actual and predicted values can be compared visually.
+- How evaluation metrics help measure model performance.
+
+---
+
+## 📁 Project Structure
+
+```text
+Data-Analyst-Level2-Task1-House-Price-Prediction/
+│
+├── README.md
+├── House_Price_Prediction.ipynb
+└── dataset.csv
