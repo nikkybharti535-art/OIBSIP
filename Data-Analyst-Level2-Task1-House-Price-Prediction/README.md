@@ -1,4 +1,4 @@
-# Data Analyst - Level 2 - Task 1: House Price Prediction
+# Level 2 - Task 1: House Price Prediction
 
 ## 📌 Project Overview
 
